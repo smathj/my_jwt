@@ -79,7 +79,7 @@ public class JwtTokenProvider {
         log.info("[토큰 유효성 검사] 시작");
         try {
 
-
+        System.out.println("secretKey = " + secretKey);
         Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);  // * <- 에러위치
         System.out.println("claims.getHeader() = " + claims.getHeader());
         System.out.println("claims.getBody() = " + claims.getBody());

@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String main() {
-        return "Hello World";
+        return "main";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+        return "home";
     }
 }

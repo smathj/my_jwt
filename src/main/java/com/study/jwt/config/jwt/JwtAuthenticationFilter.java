@@ -36,10 +36,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         log.info("[doFilterInternal] token 값 유효성 체크 시작");
         if (token != null && jwtTokenProvider.validateToken(token)) {   // 토큰 유효성 체크
-//            Authentication authentication = jwtTokenProvider.getAuthentication(token);  // 토큰정보로 회원정보 조회
+            Authentication authentication = jwtTokenProvider.getAuthentication(token);  // 토큰정보로 회원정보 조회
 
             log.info("시큐리티 컨텍스트에 담습니다");
-//            SecurityContextHolder.getContext().setAuthentication(authentication);   // 시큐리티 컨텍스트에 저장
+            SecurityContextHolder.getContext().setAuthentication(authentication);   // 시큐리티 컨텍스트에 저장
 
             // 로그인 한 사람 아이디 꺼낼떄는 이걸 씀
             // SecurityContextHolder.getContext().getAuthentication().getPrincipal();
